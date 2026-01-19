@@ -1,0 +1,19 @@
+-- lua/plugins/colorscheme.lua
+return {
+  'f4z3r/gruvbox-material.nvim',
+  name = 'gruvbox-material',
+  lazy = false,
+  priority = 1000,
+  opts = {
+    italics = true,
+    contrast = "medium",
+    comments = {
+      italics = true,
+    },
+  },
+  config = function(_, opts)
+    vim.cmd.colorscheme("gruvbox-material")
+    require("gruvbox-material").setup(opts)
+  end,
+}
+
