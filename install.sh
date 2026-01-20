@@ -2,9 +2,11 @@
 
 # Script only for use with DevPod, chezmoi will handle dotfiles on host
 
+BIN_DIR="$HOME/.local/bin"
+mkdir -p "$BIN_DIR"
+
 if ! command -v chezmoi &> /dev/null; then
-  sh -c "$(curl -fsLS get.chezmoi.io)" -- -b=$HOME/.local/bin
-  export PATH="$HOME/.local/bin:$PATH"
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- -b="$BIN_DIR"
 fi
 
-chezmoi apply --force
+"$BIN_DIR/chezmoi" apply --force --tty=false
