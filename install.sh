@@ -9,4 +9,4 @@ if ! command -v chezmoi &> /dev/null; then
   sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$BIN_DIR"
 fi
 
-"$BIN_DIR/chezmoi" apply --force --tty=false
+"$BIN_DIR/chezmoi" apply --force --no-tty
