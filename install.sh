@@ -13,7 +13,7 @@ if ! command -v starship &> /dev/null; then
     curl -sS https://starship.rs/install.sh | sh -s -- --yes -b "$BIN_DIR"
 fi
 
-"$BIN_DIR/chezmoi" apply --force --no-tty
+"$BIN_DIR/chezmoi" init --apply --source . --force --no-tty
 
 GHOSTTY_SOURCE="$HOME/.terminfo/x/xterm-ghostty"
 
